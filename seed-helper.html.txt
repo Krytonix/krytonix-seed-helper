@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Krytonix Seed Finder</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;padding:20px;background:#111;color:#fff;text-align:center}
+    input{width:80%;padding:10px;font-size:18px;border-radius:8px;border:none;margin-top:10px}
+    button{padding:10px 20px;font-size:18px;border:none;border-radius:8px;margin-top:15px;cursor:pointer;background:#3b82f6;color:#fff}
+    button:hover{background:#2563eb}
+  </style>
+</head>
+<body>
+  <h2>🧭 Krytonix Seed Finder</h2>
+  <p>Apna Minecraft seed niche daal aur map khol!</p>
+  <input id="seed" placeholder="Enter Minecraft seed..." />
+  <br>
+  <button id="openMap">Open Map Viewer</button>
+
+  <script>
+    document.getElementById('openMap').onclick = () => {
+      const seed = document.getElementById('seed').value.trim();
+      if(!seed){ alert('Bhai seed daal pehle!'); return; }
+      const url = 'https://www.chunkbase.com/apps/seed-map#' + encodeURIComponent(seed);
+      window.open(url, '_blank');
+    };
+  </script>
+</body>
+</html>
